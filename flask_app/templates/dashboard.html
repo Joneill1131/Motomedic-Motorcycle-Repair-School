@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+    <link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='css/style.css') }}">
+    <title>Dashboard</title>
+</head>
+<body>
+  <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
+    <div id="navbarSupportedContent">
+      <ul class="navbar-nav mr-auto">
+        <li class="nav-item active">
+          <a class="nav-link" href="/">Home <span class="sr-only">(current)</span></a>
+        </li>
+        <!-- <li class="nav-item">
+          <a class="nav-link" href="/sign_in">Sign In</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" href="/sign_up">Sign Up</a>
+        </li> -->
+      </ul>
+    </div>
+  </nav>
+  <div class="bg">
+    <div class="links">
+      <a href="/courses/new">Add Course |</a>
+      <a href="/logout">Logout</a>
+    </div>
+    <div class="welcome">
+    <h1>Welcome {{ student['first_name'] + " " + student['last_name'] + "!" }}</h1>
+    <h2>Here are your enrolled courses:</h2>
+    <table class="table">
+        <thead>
+            <tr>
+                <th scope="col">My Courses:</th>
+                <th scope="col">Course Start Month:</th>
+                <th scope="col">Actions</th>
+            </tr>
+        </thead>
+        <tbody>
+            {% for course in courses %}
+            <tr>          
+                <td>{{ course.course_name }}</td>
+                <td>{{ course.course_start_month }}</td>
+                <td><a href="/courses/edit/{{course['id']}}"> Change Course Start Month |</a><a href="/delete/{{course['id']}}" > Unenroll</a></td>
+            </tr> 
+            {% endfor %}
+        </tbody>
+    </table>
+    </div>
+  </div>
+    
+</body>
+</html>
