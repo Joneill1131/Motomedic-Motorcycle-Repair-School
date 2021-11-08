@@ -69,27 +69,6 @@ class Course:
         results = connectToMYSQL('students').query_db(query,data)
         return cls(results[0])
 
-    # @classmethod
-    # def get_one_complete(cls, data):
-    #     query = "SELECT * FROM bands JOIN users on bands.user_id = users.id WHERE bands.id = %(id)s;"
-    #     results = connectToMYSQL('bands').query_db(query,data)
-    #     band = cls(results[0])
-
-    #     user_data = {
-    #     'id' : results['users.id'],
-    #     'first_name' : results['first_name'],
-    #     'last_name' :  results['last_name'],
-    #     'email' : results['email'],
-    #     'password' : results['password'],
-    #     'created_at' : results['users.created_at'],
-    #     'updated_at' : results['users.updated_at']
-    #             }
-    #     creator = user.User(user_data)
-    #             new_band = cls(band)
-    #             new_band.creator = creator
-    #             bands.append(cls(new_band))
-    #         return bands
-    
     @classmethod
     def update(cls,data):
         query = "UPDATE courses SET course_name=%(course_name)s, course_start_month= %(course_start_month)s, updated_at = NOW() WHERE id = %(id)s;"

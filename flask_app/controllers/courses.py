@@ -3,15 +3,6 @@ from flask_app.models.course import Course
 from flask_app.models.student import Student
 from flask_app import app
 
-# @app.route('/dashboard')
-# def dashboard_page():
-#     if not 'student_id' in session:
-#         return redirect('/')
-#     data = {
-#         'id': session['student_id']
-#     }
-#     return render_template('dashboard.html', classes = Class.get_all_complete(), student=Student.get_by_id(data))
-    
 @app.route('/dashboard')
 def my_course_page():
     if not 'student_id' in session:

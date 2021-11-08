@@ -10,17 +10,11 @@
 </head>
 <body>
   <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
-    <div id="navbarSupportedContent">
+    <div class="collapse navbar-collapse" id="navbarSupportedContent">
       <ul class="navbar-nav mr-auto">
         <li class="nav-item active">
           <a class="nav-link" href="/">Home <span class="sr-only">(current)</span></a>
         </li>
-        <!-- <li class="nav-item"> -->
-          <!-- <a class="nav-link" href="/sign_in">Sign In</a>
-        </li>
-        <li class="nav-item">
-          <a class="nav-link" href="/sign_up">Sign Up</a>
-        </li> -->
       </ul>
     </div>
   </nav>
@@ -31,41 +25,41 @@
           {% endfor %}
       {% endif %}
   {% endwith %}
-  <div class="bg">
-  
+
   <div class="links">
-  <a href="/dashboard">Dashboard |</a>
-  <a href="/logout">Logout</a>
+    <a href="/dashboard">Dashboard |</a>
+    <a href="/logout">Logout</a>
   </div>
-  <div class="main">
-    <h1 class="headline">Add Course</h1>
-      <form action='/add_course' method='post'>
+  <div class="container">
+    <div class="row">
+      <div class="col-sm-6 mx-auto">
+        <h1>Add Course</h1>
+        <form action='/add_course' method='post'>
           <div class="form-group">
-              <label for="course_name">Course Name:</label>
-              <select name="course_name" id="course_name" class="form-control" >
-                <option value="Motorcycle Repair Basics">Motorcycle Repair Basics</option>
-                <option value="Brakes and Clutches">Brakes and Clutches</option>
-                <option value="Engines and Transmissions">Engines and Transmissions</option>
-                <option value="Suspension">Suspension</option>
-                <option value="Electrical Diagnostics">Electrical Diagnostics</option>
-                <option value="Fuel Systems">Fuel Systems</option>
-              </select>
+            <label for="course_name">Course Name:</label>
+            <select name="course_name" id="course_name" class="form-control">
+              <option value="Motorcycle Repair Basics">Motorcycle Repair Basics</option>
+              <option value="Brakes and Clutches">Brakes and Clutches</option>
+              <option value="Engines and Transmissions">Engines and Transmissions</option>
+              <option value="Suspension">Suspension</option>
+              <option value="Electrical Diagnostics">Electrical Diagnostics</option>
+              <option value="Fuel Systems">Fuel Systems</option>
+            </select>
           </div>
           <div class="form-group">
-              <label for="course_start_month">Course Start Month:</label>
-              <select name="course_start_month" id="course_start_month" class="form-control" >
-                <option value="December">December</option>
-                <option value="January">January</option>
-                <option value="February">February</option>
-                <option value="March">March</option>
-              </select>
+            <label for="course_start_month">Course Start Month:</label>
+            <select name="course_start_month" id="course_start_month" class="form-control">
+              <option value="December">December</option>
+              <option value="January">January</option>
+              <option value="February">February</option>
+              <option value="March">March</option>
+            </select>
           </div>
           <button type="submit" class="btn btn-primary">Add</button>
-      </form>
-  </div>
+        </form>
+      </div>
+    </div>
   </div>
 </body>
 </html>
 
-<!-- <input type="text" class="form-control" id="course_start_month" name="course_start_month"> -->
-<!-- <input type="text" class="form-control" id="course_name" name="course_name"> -->
